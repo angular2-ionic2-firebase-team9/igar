@@ -5,22 +5,32 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>user</ion-title>
+    <ion-title>User List</ion-title>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let user of users">
+    <ion-item-sliding *ngFor="let user of users">
+    <ion-item >
       <ion-avatar item-left>
-        <img src="img/avatar-cher.png">
+        <img src="{{user.imageUrl}}">
       </ion-avatar>
-      <h2>Cher</h2>
-      <p>Ugh. As if.</p>
+      <h2>{{user.name}}</h2>
+      <p>{{user.id}}</p>
     </ion-item>
+
+    <ion-item-options side="left">
+      <button ion-button color="primary" (click)="sendToDo(user)">
+        <ion-icon name="create"></ion-icon>
+        To Do
+      </button>
+      <button ion-button color="secondary" (click)="call(user)">
+        <ion-icon name="call"></ion-icon>
+        Call
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
   </ion-list>
 </ion-content>

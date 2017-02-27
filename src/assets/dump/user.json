@@ -1,0 +1,86 @@
+[
+    {
+        "name": "Yeri",
+        "id": "@yeri",
+        "imageUrl": "/assets/avatar/avatar-ts-jessie.png",
+        "email": "",
+        "phone": ""
+    },
+    {
+        "name": "Bin",
+        "id": "@bin",
+        "imageUrl": "/assets/avatar/avatar-ts-woody.png",
+        "email": "",
+        "phone": ""
+    },
+    {
+        "name": "Luke",
+        "id": "@luke",
+        "imageUrl": "/assets/avatar/avatar-ts-buzz.png",
+        "email": "",
+        "phone": ""
+    },
+    {
+        "name": "Mr.PotatoHead",
+        "id": "@potatohead",
+        "imageUrl": "/assets/avatar/avatar-ts-potatohead.png",
+        "email": "",
+        "phone": ""
+    },
+    {
+        "name": "Hamm",
+        "id": "@hamm",
+        "imageUrl": "/assets/avatar/avatar-ts-hamm.png",
+        "email": "",
+        "phone": ""
+    },
+    {
+        "name": "SlinkyDog",
+        "id": "@slinky",
+        "imageUrl": "/assets/avatar/avatar-ts-slinky.png",
+        "email": "",
+        "phone": ""
+    },
+    {
+        "name": "Rex",
+        "id": "@rex",
+        "imageUrl": "/assets/avatar/avatar-ts-rex.png",
+        "email": "",
+        "phone": ""
+    },
+    {
+        "name": "Bullseye",
+        "id": "@bullseye",
+        "imageUrl": "/assets/avatar/avatar-ts-bullseye.png",
+        "email": "",
+        "phone": ""
+    },
+    {
+        "name": "Barbie",
+        "id": "@barbie",
+        "imageUrl": "/assets/avatar/avatar-ts-barbie.png",
+        "email": "",
+        "phone": ""
+    },
+    {
+        "name": "Squeeze",
+        "id": "@squeeze",
+        "imageUrl": "/assets/avatar/avatar-ts-squeeze.png",
+        "email": "",
+        "phone": ""
+    },
+    {
+        "name": "Sarge",
+        "id": "@sarge",
+        "imageUrl": "/assets/avatar/avatar-ts-sarge.png",
+        "email": "",
+        "phone": ""
+    },
+    {
+        "name": "BoPeep",
+        "id": "@bopeep",
+        "imageUrl": "/assets/avatar/avatar-ts-bopeep.png",
+        "email": "",
+        "phone": ""
+    }
+]

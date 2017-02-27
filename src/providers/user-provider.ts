@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
+import {Observable} from 'rxjs/Rx';
+
+// Import RxJs required methods
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+
 
 /*
   Generated class for the UserProvider provider.
@@ -8,12 +13,6 @@ import 'rxjs/add/operator/map';
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular 2 DI.
 */
-
-interface User {
-  firstName: string;
-  lastName: string;
-}
-
 
 
 @Injectable()
@@ -23,20 +22,8 @@ export class UserProvider {
     console.log('Hello UserProvider Provider');
   }
 
-
-  getUers (){
-
-
-
-
-
-    return [{
-      name : 'AAAA',
-      id : '@bin'
-    }, {
-      name : 'BBB',
-      id : '@luke'
-    }]
-
+  load(){
+    return this.http.get('/assets/dump/user.json').map(response => response.json());
   }
+
 }

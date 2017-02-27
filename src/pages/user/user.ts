@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {UserProvider} from "../../providers/user-provider";
+import {UserProvider} from '../../providers/user-provider';
+import {User} from '../../models/user'
 /*
   Generated class for the User page.
 
@@ -8,31 +9,32 @@ import {UserProvider} from "../../providers/user-provider";
   Ionic pages and navigation.
 */
 
-interface User {
-  name: string;
-  id: string;
-}
-
-
 @Component({
   selector: 'page-user',
   templateUrl: 'user.html'
 })
 export class UserPage {
 
+  users : User[];
 
-  users : Array<User>;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userService : UserProvider) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userProvider : UserProvider) {
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserPage');
 
-    this.users = this.userService.getUers();
+    this.userProvider.load().subscribe(users => {
+      this.users = users;
+    });
 
   }
 
+  sendToDo(user: User){
+    alert('Create ToDo to ' + user.name);
+  }
+
+  call(user: User){
+    alert('Call ' + user.name);
+  }
 }
