@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {UserPage} from "../pages/user/user";
 import {UserProvider} from "../providers/user-provider";
+import {CategoryProvider} from "../providers/category-provider";
 
 
 @NgModule({
@@ -33,6 +34,6 @@ import {UserProvider} from "../providers/user-provider";
   providers: [{
     provide: ErrorHandler,
     useClass: IonicErrorHandler
-  }, UserProvider]
+  }, UserProvider, CategoryProvider]
 })
 export class AppModule {}
