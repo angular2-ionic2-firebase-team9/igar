@@ -1,20 +1,23 @@
 [
   {
     "name": "집안일",
-    "id": "1",
+    "id": 1,
     "color": "#6fa6aa",
-    "order": "1"
+    "order": 1,
+    "todoCount": 3
   },
   {
     "name": "업무관련",
-    "id": "2",
+    "id": 2,
     "color": "#ff6078",
-    "order": "2"
+    "order": 3,
+    "todoCount": 0
   },
   {
     "name": "스터디준비",
-    "id": "3",
+    "id": 3,
     "color": "#9dcf50",
-    "order": "3"
+    "order": 2,
+    "todoCount": 8
   }
 ]
