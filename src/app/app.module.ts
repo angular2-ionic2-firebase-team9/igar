@@ -6,6 +6,10 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {TodoService} from '../providers/todo-service';
+import {UserPage} from "../pages/user/user";
+import {UserProvider} from "../providers/user-provider";
+import {CategoryProvider} from "../providers/category-provider";
+
 
 @NgModule({
   declarations: [
@@ -26,6 +30,9 @@ import {TodoService} from '../providers/todo-service';
     HomePage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},TodoService]
+  providers: [{
+    provide: ErrorHandler,
+    useClass: IonicErrorHandler
+  }, UserProvider, CategoryProvider, TodoService]
 })
 export class AppModule {}
