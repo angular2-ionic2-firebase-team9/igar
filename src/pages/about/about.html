@@ -7,5 +7,31 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-list-header>
+      Todo
+    </ion-list-header>
+    <ion-searchbar (ionInput)="search($event)"></ion-searchbar>
+    <ion-item-sliding *ngFor="let item of todoData">
+      <ion-item>
+        <h2>{{item}}번째</h2>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="primary">
+          <ion-icon name="text"></ion-icon>
+          Text
+        </button>
+        <button ion-button color="secondary">
+          <ion-icon name="call"></ion-icon>
+          Call
+        </button>
+      </ion-item-options>
+      <ion-item-options side="right">
+        <button ion-button color="primary">
+          <ion-icon name="mail"></ion-icon>
+          Email
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
