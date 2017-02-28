@@ -4,4 +4,5 @@ export interface Category {
     color: string;
     email : string;
     order : number;
+    todoCount: number;
 }
