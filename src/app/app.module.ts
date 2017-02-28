@@ -17,6 +17,7 @@ import {CategoryProvider} from "../providers/category-provider";
     AboutPage,
     ContactPage,
     HomePage,
+    UserPage,
     TabsPage
   ],
   imports: [
@@ -28,6 +29,7 @@ import {CategoryProvider} from "../providers/category-provider";
     AboutPage,
     ContactPage,
     HomePage,
+    UserPage,
     TabsPage
   ],
   providers: [{
