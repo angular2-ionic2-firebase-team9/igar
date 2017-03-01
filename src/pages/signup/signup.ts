@@ -84,4 +84,8 @@ export class SignupPage {
       buttons: ['OK']
     }).present();
   }
+
+  goToLogin(){
+    this.navCtrl.setRoot(LoginPage)
+  }
 }
