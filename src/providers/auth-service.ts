@@ -26,6 +26,13 @@ export class AuthService {
     return this.authState !== null;
   }
 
+  signUpWithEmail(email:string, password:string): firebase.Promise<FirebaseAuthState>{
+    return this.auth$.createUser({
+      email : email,
+      password : password
+    });
+  }
+
   signInWithEmail(email:string, password:string): firebase.Promise<FirebaseAuthState> {
     return this.auth$.login({
       email: email,

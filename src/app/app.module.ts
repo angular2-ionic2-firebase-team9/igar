@@ -13,6 +13,7 @@ import { LoginPage } from '../pages/login/login';
 import { UserProvider } from "../providers/user-provider";
 import { CategoryProvider } from "../providers/category-provider";
 import { AngularFireModule } from "angularfire2";
+import { FormsModule } from '@angular/forms';
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -35,6 +36,7 @@ const firebaseConfig = {
     SignupPage
   ],
   imports: [
+    FormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp)
   ],
