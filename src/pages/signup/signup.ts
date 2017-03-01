@@ -1,3 +1,5 @@
+import { User } from './../../models/User';
+import { UserProvider } from './../../providers/user-provider';
 import { LoginPage } from './../login/login';
 import { AuthService } from './../../providers/auth-service';
 import { Component } from '@angular/core';
@@ -22,7 +24,8 @@ export class SignupPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public authService: AuthService, public alertCtrl: AlertController,
-    public toastCtrl: ToastController, public loadingCtrl: LoadingController) { }
+    public toastCtrl: ToastController, public loadingCtrl: LoadingController,
+    public userProvider: UserProvider) { }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
@@ -71,9 +74,25 @@ export class SignupPage {
   }
 
   signupSuccess(res) {
-    this.hideLoading();
-    this.makeToast("Signup Successfully.")
-      .onDidDismiss(() => this.navCtrl.setRoot(LoginPage));
+
+    let user = {
+      name: res.auth.email,
+      email: res.auth.email
+    }
+
+    this.userProvider.save(user)
+      .then(res => {
+        this.hideLoading();
+        this.makeToast("Signup Successfully.")
+          .onDidDismiss(() => this.navCtrl.setRoot(LoginPage));
+      })
+      .catch(res => {
+        this.hideLoading();
+        this.alertCtrl.create({
+          subTitle: res.message,
+          buttons: ['OK']
+        }).present();
+      });
   }
 
   signupError(res) {
@@ -85,7 +104,7 @@ export class SignupPage {
     }).present();
   }
 
-  goToLogin(){
+  goToLogin() {
     this.navCtrl.setRoot(LoginPage)
   }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {UserProvider} from '../../providers/user-provider';
-import {User} from '../../models/user'
+import {User} from '../../models/User'
 /*
   Generated class for the User page.
 
