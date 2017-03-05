@@ -1,5 +1,5 @@
-import { SignupPage } from './../pages/signup/signup';
-import { AuthService } from './../providers/auth-service';
+import { SignupPage } from '../pages/signup/signup';
+import { AuthService } from '../providers/auth-service';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -11,9 +11,10 @@ import { TodoService } from '../providers/todo-service';
 import { UserPage } from "../pages/user/user";
 import { LoginPage } from '../pages/login/login';
 import { UserProvider } from "../providers/user-provider";
-import { CategoryProvider } from "../providers/category-provider";
+import { CategoryService } from "../providers/category-service";
 import { AngularFireModule } from "angularfire2";
 import { FormsModule } from '@angular/forms';
+import { SideNav } from '../pages/sidenav/sidenav';
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -33,7 +34,8 @@ const firebaseConfig = {
     UserPage,
     TabsPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    SideNav
   ],
   imports: [
     FormsModule,
@@ -49,11 +51,12 @@ const firebaseConfig = {
     UserPage,
     TabsPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    SideNav
   ],
   providers: [{
     provide: ErrorHandler,
     useClass: IonicErrorHandler
-  }, UserProvider, CategoryProvider, TodoService, AuthService]
+  }, UserProvider, CategoryService, TodoService, AuthService]
 })
 export class AppModule { }

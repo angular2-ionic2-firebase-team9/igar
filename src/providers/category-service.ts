@@ -3,19 +3,19 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 /*
-  Generated class for the CategoryProvider provider.
+  Generated class for the CategoryService provider.
 
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular 2 DI.
 */
 @Injectable()
-export class CategoryProvider {
+export class CategoryService {
 
   constructor(public http: Http) {
-    console.log('Hello CategoryProvider Provider');
+    console.log('Hello CategoryService Provider');
   }
 
-  load() {
+  getCategory() {
     return this.http.get('/assets/dump/category.json').map(response => response.json());
   }
 
