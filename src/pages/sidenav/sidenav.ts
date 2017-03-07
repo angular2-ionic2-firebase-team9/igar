@@ -28,7 +28,7 @@ export class SideNav {
     // we wouldn't want the back button to show in this scenario
     // this.nav.setRoot(category);
 
-    this.nav.setRoot(AboutPage);
+    this.nav.setRoot(AboutPage, { categoryId: category.id });
     // this.navCtrl.push(AboutPage);
   }
 }
