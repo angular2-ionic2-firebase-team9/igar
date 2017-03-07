@@ -26,9 +26,7 @@ export class SideNav {
   openCategory(category) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    // this.nav.setRoot(category);
-
-
+    // thi``````s.nav.setRoot(category);
 
     let categoryId = (category) ? category.id : null;
     console.log(categoryId)
