@@ -15,6 +15,11 @@
       </button>
     </ion-list>
   </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title menuClose (click)="addCategory()">카테고리 추가</ion-title>
+    </ion-toolbar>
+  </ion-footer>
 </ion-menu>
 
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
