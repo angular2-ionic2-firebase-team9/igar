@@ -4,8 +4,6 @@ import {UserProvider} from '../../providers/user-provider';
 import {User} from '../../models/User'
 import {Storage} from '@ionic/storage';
 
-import {SQLite} from 'ionic-native';
-
 /*
  Generated class for the User page.
 
@@ -60,4 +58,5 @@ export class UserPage {
   call(user: User) {
     alert('Call ' + user.name);
   }
+
 }
