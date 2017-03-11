@@ -1,7 +1,7 @@
 import {SignupPage} from '../pages/signup/signup';
 import {AuthService} from '../providers/auth-service';
-import {NgModule, ErrorHandler} from '@angular/core';
-import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
+import {ErrorHandler, NgModule} from '@angular/core';
+import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {MyApp} from './app.component';
 import {AboutPage} from '../pages/about/about';
 import {ContactPage} from '../pages/contact/contact';
@@ -15,7 +15,8 @@ import {CategoryService} from '../providers/category-service';
 import {AngularFireModule} from 'angularfire2';
 import {FormsModule} from '@angular/forms';
 import {SideNav} from '../pages/sidenav/sidenav';
-import {IgImageListItemComponent, IgImageListComponent} from '../components/image.list/image.list';
+import {IgImageListComponent, IgImageListItemComponent} from '../components/image.list/image.list';
+import {UtilService} from '../providers/util';
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -34,11 +35,11 @@ const pages = [MyApp,
   LoginPage,
   SignupPage,
   SideNav];
-const components =[IgImageListItemComponent,IgImageListComponent];
+const components = [IgImageListItemComponent, IgImageListComponent];
 
 @NgModule({
   declarations: [
-    ...pages,...components
+    ...pages, ...components
   ],
   imports: [
     FormsModule,
@@ -52,7 +53,7 @@ const components =[IgImageListItemComponent,IgImageListComponent];
   providers: [{
     provide: ErrorHandler,
     useClass: IonicErrorHandler
-  }, UserProvider, CategoryService, TodoService, AuthService]
+  }, UserProvider, CategoryService, TodoService, AuthService, UtilService]
 })
 export class AppModule {
 }
