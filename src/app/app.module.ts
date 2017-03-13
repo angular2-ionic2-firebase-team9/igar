@@ -17,6 +17,7 @@ import {FormsModule} from '@angular/forms';
 import {SideNav} from '../pages/sidenav/sidenav';
 import {IgImageListComponent, IgImageListItemComponent} from '../components/image.list/image.list';
 import {UtilService} from '../providers/util';
+import {AddPage} from '../pages/add/add';
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -34,7 +35,8 @@ const pages = [MyApp,
   TabsPage,
   LoginPage,
   SignupPage,
-  SideNav];
+  SideNav,
+  AddPage];
 const components = [IgImageListItemComponent, IgImageListComponent];
 
 @NgModule({
