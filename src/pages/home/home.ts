@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { CategoryProvider } from '../../providers/category-provider';
+import { CategoryService } from '../../providers/category-service';
 import { Category } from '../../models/category';
 
 @Component({
@@ -9,19 +9,16 @@ import { Category } from '../../models/category';
 })
 
 export class HomePage {
-
   categories : Category[];
 
-  constructor(public navCtrl: NavController, public categoryProvider : CategoryProvider) {
+  constructor(public navCtrl: NavController, public categoryService : CategoryService) {
 
-
-    categoryProvider.load().subscribe(categories => {
+   /* categoryService.load().subscribe(categories => {
       this.categories = categories;
-    });
+    });*/
   }
 
   itemSelected(category: Category) {
     console.log(category)
   }
-
 }
