@@ -10,8 +10,16 @@
       <button menuClose ion-item *ngFor="let c of categories" (click)="openCategory(c)">
         {{c.name}}
       </button>
+      <button menuClose ion-item (click)="openCategory()">
+        모두보기
+      </button>
     </ion-list>
   </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title menuClose (click)="addCategory()">카테고리 추가</ion-title>
+    </ion-toolbar>
+  </ion-footer>
 </ion-menu>
 
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

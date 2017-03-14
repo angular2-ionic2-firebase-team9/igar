@@ -15,6 +15,7 @@ import { CategoryService } from "../providers/category-service";
 import { AngularFireModule } from "angularfire2";
 import { FormsModule } from '@angular/forms';
 import { SideNav } from '../pages/sidenav/sidenav';
+import { Storage  } from '@ionic/storage';
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -57,6 +58,6 @@ const firebaseConfig = {
   providers: [{
     provide: ErrorHandler,
     useClass: IonicErrorHandler
-  }, UserProvider, CategoryService, TodoService, AuthService]
+  }, UserProvider, CategoryService, TodoService, AuthService, Storage ]
 })
 export class AppModule { }
