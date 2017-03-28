@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {TodoService} from '../../providers/todo-service';
-import {AddPage} from '../add/add';
+import {TodoDetailPage} from '../todo-detail/todo-detail';
 
 @Component({
   selector: 'page-about',
@@ -10,7 +10,7 @@ import {AddPage} from '../add/add';
 export class AboutPage {
   todoData: number[];
   todoInit: number[];
-  moveAddPage = AddPage;
+  moveAddPage = TodoDetailPage;
 
   constructor(public navCtrl: NavController,
               private todoService: TodoService) {
