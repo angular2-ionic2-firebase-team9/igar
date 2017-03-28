@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { AngularFireModule, FirebaseAuthState, AngularFireAuth, AuthProviders, AuthMethods } from "angularfire2";
+import { Subscription, BehaviorSubject } from 'rxjs';
 
 /*
   Generated class for the AuthService provider.
@@ -14,11 +15,21 @@ export class AuthService {
 
   private authState: FirebaseAuthState;
 
+  public isLoggedIn = new BehaviorSubject<boolean>(false);
+
   constructor(public http: Http, public auth$: AngularFireAuth) {
     console.log('Hello AuthService Provider');
-    this.authState = auth$.getAuth();
+    //this.authState = auth$.getAuth();
     auth$.subscribe((state: FirebaseAuthState) => {
+
+      if (!state) {
+        this.isLoggedIn.next(false);
+        return;
+      }
+
+      this.isLoggedIn.next(true);
       this.authState = state;
+
     });
   }
 
