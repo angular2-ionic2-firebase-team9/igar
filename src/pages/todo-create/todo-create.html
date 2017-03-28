@@ -1,0 +1,38 @@
+<!--
+  Generated template for the TodoCreate page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Todo생성</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #sendRef="ngForm">
+    <div class="em-list">
+      <ion-list>
+        <ion-item>
+          <ion-icon name="em-icon-question" color="primary">
+          </ion-icon>
+          <ion-label>제목</ion-label>
+          <ion-input type="text" ngModel #titleRef="ngModel" name="title"
+                     required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-textarea rows="6" ngModel name="content"
+                        placeholder="문의내용을 작성해주세요." required>
+          </ion-textarea>
+        </ion-item>
+      </ion-list>
+    </div>
+  </form>
+  <button ion-button color="accent" [disabled]="sendRef.invalid" (click)="createTodo(sendRef.value)" full block>
+    생성
+  </button>
+</ion-content>
