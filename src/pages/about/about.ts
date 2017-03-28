@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {TodoService} from '../../providers/todo-service';
+import {TodoCreatePage} from '../todo-create/todo-create';
 import {TodoDetailPage} from '../todo-detail/todo-detail';
 
 @Component({
@@ -10,7 +11,7 @@ import {TodoDetailPage} from '../todo-detail/todo-detail';
 export class AboutPage {
   todoData: number[];
   todoInit: number[];
-  moveAddPage = TodoDetailPage;
+  moveAddPage = TodoCreatePage;
 
   constructor(public navCtrl: NavController,
               private todoService: TodoService) {
@@ -29,6 +30,9 @@ export class AboutPage {
       console.log($event);
       this.todoData = this.todoData.filter((item) => `${item}` === $event.target.value);
     }
+  }
+  moveDetail(id) {
+    this.navCtrl.push(TodoDetailPage);
   }
 
 }

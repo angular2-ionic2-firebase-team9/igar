@@ -17,6 +17,7 @@ import {FormsModule} from '@angular/forms';
 import {SideNav} from '../pages/sidenav/sidenav';
 import {Storage} from '@ionic/storage';
 import {TodoDetailPage} from '../pages/todo-detail/todo-detail';
+import {TodoCreatePage} from '../pages/todo-create/todo-create';
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -37,7 +38,8 @@ const Pages = [
   LoginPage,
   SignupPage,
   SideNav,
-  TodoDetailPage
+  TodoDetailPage,
+  TodoCreatePage
 ];
 @NgModule({
   declarations: Pages,

@@ -18,7 +18,7 @@
     </ion-list-header>
     <ion-searchbar (ionInput)="search($event)"></ion-searchbar>
     <ion-item-sliding *ngFor="let item of todoData">
-      <ion-item>
+      <ion-item (click)="moveDetail(item.id)">
         <h2>{{item}}번째</h2>
       </ion-item>
       <ion-item-options side="left">
