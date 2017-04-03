@@ -1,22 +1,25 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
 
 /*
-  Generated class for the TodoDetail page.
+ Generated class for the TodoDetail page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+ See http://ionicframework.com/docs/v2/components/#navigation for more info on
+ Ionic pages and navigation.
+ */
 @Component({
   selector: 'page-todo-detail',
   templateUrl: 'todo-detail.html'
 })
 export class TodoDetailPage {
+  todoDetail: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TodoDetailPage');
+    this.todoDetail = this.navParams.get('item');
   }
 
 }
