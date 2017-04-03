@@ -14,7 +14,7 @@ export interface iTodo{
   content:string
 }
 
-const data = [1, 2, 3, 4, 5, 6, 7];
+
 @Injectable()
 export class TodoService {
 
@@ -22,10 +22,10 @@ export class TodoService {
     console.log('Hello TodoService Provider');
   }
 
-  getData() {
-    return data;
-  }
   createTodo(todo) {
     this.af.database.list('/todo').push(todo);
+  }
+  getTodoList() {
+    return this.af.database.list('/todo');
   }
 }
