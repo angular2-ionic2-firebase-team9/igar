@@ -1,10 +1,8 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
 import {TodoService} from '../../providers/todo-service';
 import {TodoCreatePage} from '../todo-create/todo-create';
 import {TodoDetailPage} from '../todo-detail/todo-detail';
-import {CategoryService} from '../../providers/category-service';
-import {Category} from '../../models/category';
 
 @Component({
   selector: 'page-about',
@@ -16,20 +14,26 @@ export class AboutPage {
   moveAddPage = TodoCreatePage;
 
   constructor(public navCtrl: NavController,
-              private todoService: TodoService) {
+              private todoService: TodoService,
+              private navParams: NavParams) {
+
+    //categoryId가 없을 때 null로 들어와서 전체 쿼리하려고 undefined
+    let categoryId = navParams.get('categoryId') ?
+      navParams.get('categoryId').toString() : undefined;
+
     // this.todoData = this.todoService.getData();
     this.todoData =
-      this.todoService.getTodoList().share();
-    this.todoData
-    .subscribe((data) => {
-        console.log(data);
-      },
-      (error) => {
-        console.error(error);
-      },
-      () => {
-        console.log('complete');
-      });
+      this.todoService.getTodoList(categoryId).share();
+    /*this.todoData
+     .subscribe((data) => {
+     console.log(data);
+     },
+     (error) => {
+     console.error(error);
+     },
+     () => {
+     console.log('complete');
+     });*/
     // this.todoInit = [...this.todoData];
   }
 

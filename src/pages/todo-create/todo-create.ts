@@ -22,6 +22,7 @@ export class TodoCreatePage {
     console.log('ionViewDidLoad TodoCreatePage');
   }
 
+
   createTodo(value){
     console.log(value);
     this.todoService.createTodo(value);

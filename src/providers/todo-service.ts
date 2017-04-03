@@ -25,7 +25,14 @@ export class TodoService {
   createTodo(todo) {
     this.af.database.list('/todo').push(todo);
   }
-  getTodoList() {
-    return this.af.database.list('/todo');
+
+  getTodoList(categoryId) {
+    console.log(categoryId)
+    return this.af.database.list('/todo', {
+      query : {
+        orderByChild: 'categoryId',
+        equalTo: categoryId
+      }
+    });
   }
 }

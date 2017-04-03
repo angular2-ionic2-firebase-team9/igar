@@ -27,7 +27,6 @@ export class SideNav {
     // this.nav.setRoot(category);
 
     let categoryId = (category) ? category.id : null;
-    console.log(categoryId)
     this.nav.setRoot(AboutPage, { categoryId: categoryId });
     // this.navCtrl.push(AboutPage);
   }

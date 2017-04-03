@@ -29,6 +29,10 @@
                         placeholder="문의내용을 작성해주세요." required>
           </ion-textarea>
         </ion-item>
+        <ion-item>
+          <ion-input type="text" ngModel #titleRef="ngModel" name="categoryId"
+                     placeholder="카테고리"></ion-input>
+        </ion-item>
       </ion-list>
     </div>
   </form>
