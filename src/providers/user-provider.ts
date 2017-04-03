@@ -29,7 +29,8 @@ export class UserProvider {
     this.items = this.af.database.list('/users');
     this.items.forEach(user=>console.error(user))
     
-    return this.http.get('/assets/dump/user.json').map(response => response.json());
+    // return this.http.get('/assets/dump/user.json').map(response => response.json());
+    return this.af.database.list('/users');
   }
 
   save(user: User) {

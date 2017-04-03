@@ -1,15 +1,14 @@
-import { User } from './../../models/User';
-import { UserProvider } from './../../providers/user-provider';
-import { LoginPage } from './../login/login';
-import { AuthService } from './../../providers/auth-service';
-import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController, ToastController, Toast, LoadingController, Loading } from 'ionic-angular';
+import {UserProvider} from './../../providers/user-provider';
+import {LoginPage} from './../login/login';
+import {AuthService} from './../../providers/auth-service';
+import {Component} from '@angular/core';
+import {AlertController, Loading, LoadingController, NavController, NavParams, Toast, ToastController} from 'ionic-angular';
 /*
-  Generated class for the Signup page.
+ Generated class for the Signup page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+ See http://ionicframework.com/docs/v2/components/#navigation for more info on
+ Ionic pages and navigation.
+ */
 @Component({
   selector: 'page-signup',
   templateUrl: 'signup.html'
@@ -23,9 +22,10 @@ export class SignupPage {
   private loading: Loading;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public authService: AuthService, public alertCtrl: AlertController,
-    public toastCtrl: ToastController, public loadingCtrl: LoadingController,
-    public userProvider: UserProvider) { }
+              public authService: AuthService, public alertCtrl: AlertController,
+              public toastCtrl: ToastController, public loadingCtrl: LoadingController,
+              public userProvider: UserProvider) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
@@ -56,9 +56,10 @@ export class SignupPage {
 
     if (this.passwordValidate()) {
       this.showLoading();
-      this.authService.signUpWithEmail(this.email, this.password)
-        .then(res => this.signupSuccess(res))
-        .catch(res => this.signupError(res));
+      this.authService.signUpWithEmail(this.email,
+        this.password)
+      .then(res => this.signupSuccess(res))
+      .catch(res => this.signupError(res));
     } else {
       let alert = this.alertCtrl.create({
         subTitle: "Password not matched",
@@ -81,18 +82,19 @@ export class SignupPage {
     }
 
     this.userProvider.save(user)
-      .then(res => {
-        this.hideLoading();
-        this.makeToast("Signup Successfully.")
-          .onDidDismiss(() => this.navCtrl.setRoot(LoginPage));
+    .then(res => {
+      this.hideLoading();
+      this.makeToast("Signup Successfully.")
+      .onDidDismiss(() => this.navCtrl.setRoot(LoginPage));
+    })
+    .catch(res => {
+      this.hideLoading();
+      this.alertCtrl.create({
+        subTitle: res.message,
+        buttons: ['OK']
       })
-      .catch(res => {
-        this.hideLoading();
-        this.alertCtrl.create({
-          subTitle: res.message,
-          buttons: ['OK']
-        }).present();
-      });
+      .present();
+    });
   }
 
   signupError(res) {
@@ -101,7 +103,8 @@ export class SignupPage {
       title: res.code,
       subTitle: res.message,
       buttons: ['OK']
-    }).present();
+    })
+    .present();
   }
 
   goToLogin() {
