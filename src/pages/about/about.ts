@@ -3,6 +3,8 @@ import {NavController} from 'ionic-angular';
 import {TodoService} from '../../providers/todo-service';
 import {TodoCreatePage} from '../todo-create/todo-create';
 import {TodoDetailPage} from '../todo-detail/todo-detail';
+import {CategoryService} from '../../providers/category-service';
+import {Category} from '../../models/category';
 
 @Component({
   selector: 'page-about',
@@ -47,5 +49,4 @@ export class AboutPage {
   moveDetail(item) {
     this.navCtrl.push(TodoDetailPage,{item});
   }
-
 }

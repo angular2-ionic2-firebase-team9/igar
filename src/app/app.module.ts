@@ -5,7 +5,6 @@ import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {MyApp} from './app.component';
 import {AboutPage} from '../pages/about/about';
 import {ContactPage} from '../pages/contact/contact';
-import {HomePage} from '../pages/home/home';
 import {TabsPage} from '../pages/tabs/tabs';
 import {TodoService} from '../providers/todo-service';
 import {UserPage} from '../pages/user/user';
@@ -32,7 +31,6 @@ const Pages = [
   MyApp,
   AboutPage,
   ContactPage,
-  HomePage,
   UserPage,
   TabsPage,
   LoginPage,

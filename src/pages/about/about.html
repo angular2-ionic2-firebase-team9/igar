@@ -1,8 +1,13 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
     <ion-title>
       Todo
     </ion-title>
+
     <ion-buttons end>
       <button ion-button icon-only [navPush]="moveAddPage">
         <ion-icon name="add"></ion-icon>

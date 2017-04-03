@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, NavController, AlertController } from 'ionic-angular';
-import { HomePage } from '../home/home';
 import { AboutPage } from '../about/about';
 import { CategoryService } from '../../providers/category-service';
 import { Category } from '../../models/category';
@@ -13,8 +12,7 @@ import { Category } from '../../models/category';
 export class SideNav {
   @ViewChild(Nav) nav: Nav;
 
-  //todo: todo페이지와 연결해야함. HomePage -> AboutPage
-  rootPage: any = HomePage;
+  rootPage: any = AboutPage;
 
   categories: Array<Category>;
 
@@ -26,7 +24,7 @@ export class SideNav {
   openCategory(category) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    // thi``````s.nav.setRoot(category);
+    // this.nav.setRoot(category);
 
     let categoryId = (category) ? category.id : null;
     console.log(categoryId)
@@ -54,7 +52,7 @@ export class SideNav {
         {
           text: '추가',
           handler: data => {
-            this.categoryService.add({name: data.name, id: this.categories.length});
+            this.categoryService.add({name: data.name, id: ++this.categories.length});
           }
         }
       ]
