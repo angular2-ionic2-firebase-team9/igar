@@ -32,7 +32,7 @@
         <ion-item>
           <ion-label>카테고리</ion-label>
           <ion-select ngModel #titleRef="ngModel" name="categoryId">
-            <ion-option *ngFor="let c of categories" value = "c.id">{{c.name}}</ion-option>
+            <ion-option *ngFor="let c of categories" [value]="c.id">{{c.name}}</ion-option>
           </ion-select>
         </ion-item>
       </ion-list>
