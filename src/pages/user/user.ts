@@ -104,7 +104,17 @@ export class UserPage {
         {
           text: 'Add',
           handler: data => {
-            this.userProvider.findFriend(data.email);
+
+            if(this.myEmail === data.email){
+              let alert = this.alertCtrl.create({
+                subTitle: "Can't add your self.",
+                buttons: ['OK']
+              });
+              alert.present();
+            }else{
+              this.userProvider.findFriend(data.email);
+            }
+            
           }
         }
       ]
