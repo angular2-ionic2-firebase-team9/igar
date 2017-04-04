@@ -18,8 +18,7 @@ export class AboutPage {
               private navParams: NavParams) {
 
     //categoryId가 없을 때 null로 들어와서 전체 쿼리하려고 undefined
-    let categoryId = navParams.get('categoryId') ?
-      navParams.get('categoryId').toString() : undefined;
+    let categoryId = navParams.get('categoryId') || undefined;
 
     // this.todoData = this.todoService.getData();
     this.todoData =

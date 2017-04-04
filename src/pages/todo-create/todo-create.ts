@@ -1,6 +1,8 @@
 import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {TodoService} from '../../providers/todo-service';
+import {CategoryService} from '../../providers/category-service';
+import {Category} from '../../models/category';
 
 /*
  Generated class for the TodoCreate page.
@@ -13,9 +15,14 @@ import {TodoService} from '../../providers/todo-service';
   templateUrl: 'todo-create.html'
 })
 export class TodoCreatePage {
+  categories: Array<Category>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private todoService: TodoService) {
+              private todoService: TodoService,
+              private categoryService : CategoryService) {
+
+    categoryService.getCategory().subscribe(data => this.categories = data);
+
   }
 
   ionViewDidLoad() {
