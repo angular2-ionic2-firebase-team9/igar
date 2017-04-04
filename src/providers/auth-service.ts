@@ -20,8 +20,8 @@ export class AuthService {
   constructor(public http: Http, public auth$: AngularFireAuth) {
     console.log('Hello AuthService Provider');
     //this.authState = auth$.getAuth();
+    
     auth$.subscribe((state: FirebaseAuthState) => {
-
       if (!state) {
         this.isLoggedIn.next(false);
         return;
@@ -57,6 +57,10 @@ export class AuthService {
 
   signOut(): void {
     this.auth$.logout();
+  }
+
+  getMyInfo(): any {
+    return this.authState.auth;
   }
 
 }

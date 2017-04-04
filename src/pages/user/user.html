@@ -7,18 +7,34 @@
 <ion-header>
   <ion-navbar>
     <ion-title>User List</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addFriend()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
-    <ion-item-sliding *ngFor="let user of users">
+    <ion-list-header>My Profile</ion-list-header>
+     <ion-item >
+      <ion-avatar item-left>
+        <img src="dfsdf"  onError="this.src='assets/avatar/default-user.png'">
+      </ion-avatar>
+      <h2>{{myEmail}}</h2>
+      <p>@me</p>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>Friends</ion-list-header>
+    <ion-item-sliding *ngFor="let user of friends">
     <ion-item >
       <ion-avatar item-left>
         <img src="{{user.imageUrl}}"  onError="this.src='assets/avatar/default-user.png'">
       </ion-avatar>
-      <h2>{{user.name}}</h2>
-      <p>{{user.id}}</p>
+      <h2>{{user}}</h2>
+      <p>{{user}}</p>
     </ion-item>
 
     <ion-item-options side="left">
