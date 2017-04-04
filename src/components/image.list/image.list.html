@@ -1,0 +1,11 @@
+<div class="list">
+  <ig-image-list-item *ngFor="let image of listData; let i = index" [src]="image" class="image"
+                      [index]="i" (select)="toggleImage($event)"
+                      [class.active]="selectedImageIndexMap.has(i)"></ig-image-list-item>
+  <div class="controller" *ngIf="selectedImageIndexMap.size !== 0">
+    <ion-badge color="danger">{{selectedImageIndexMap.size}}</ion-badge>
+    <button ion-button (click)="deleteImage()">
+      <ion-icon name="trash"></ion-icon>
+    </button>
+  </div>
+</div>

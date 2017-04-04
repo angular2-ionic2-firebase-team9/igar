@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFire } from 'angularfire2';
-import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Category } from '../models/category';
 
@@ -13,12 +12,13 @@ import { Category } from '../models/category';
 @Injectable()
 export class CategoryService {
 
-  constructor(public http: Http, public af: AngularFire) {
+  constructor(public af: AngularFire) {
     console.log('Hello CategoryService Provider');
   }
 
   getCategory() {
-    return this.http.get('/assets/dump/category.json').map(response => response.json());
+    // return this.http.get('/assets/dump/category.json').map(response => response.json());
+    return this.af.database.list('/category');
   }
 
   add(category: Category) {

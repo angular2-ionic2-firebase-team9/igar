@@ -1,0 +1,28 @@
+em-image-list {
+  display: block;
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    .image {
+      width: 25rem;
+      height: 25rem;
+      margin-bottom: 3rem;
+      box-sizing: border-box;
+      &.active {
+        border: 1px solid red;
+      }
+    }
+    .controller {
+      display: flex;
+      align-items: center;
+      height: 50px;
+    }
+    .delete-button {
+      ion-badge {
+        position: absolute;
+      }
+    }
+  }
+}
